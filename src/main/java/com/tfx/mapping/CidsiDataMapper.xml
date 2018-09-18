@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.tfx.dao.CidsiDataDao" >
+  <resultMap id="BaseResultMap" type="com.tfx.domain.CidsiData" >
+    <result column="a1" property="a1" jdbcType="DOUBLE" />
+    <result column="a2" property="a2" jdbcType="DOUBLE" />
+    <result column="a3" property="a3" jdbcType="DOUBLE" />
+    <result column="a4" property="a4" jdbcType="DOUBLE" />
+    <result column="a5" property="a5" jdbcType="DOUBLE" />
+    <result column="a6" property="a6" jdbcType="DOUBLE" />
+    <result column="a7" property="a7" jdbcType="DOUBLE" />
+    <result column="a8" property="a8" jdbcType="DOUBLE" />
+    <result column="a9" property="a9" jdbcType="DOUBLE" />
+    <result column="a10" property="a10" jdbcType="DOUBLE" />
+    <result column="a11" property="a11" jdbcType="DOUBLE" />
+    <result column="a12" property="a12" jdbcType="DOUBLE" />
+    <result column="quality" property="quality" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, quality
+  </sql>
+  <select id="queryData" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"></include>
+  	from cidsi_data limit #{rowOffSet},#{pageSize}
+  </select>
+  <select id="getNumOfRecord" resultType="java.lang.Integer">
+  	select count(*) from cidsi_data
+  </select>
+  <insert id="insertData" parameterType="com.tfx.domain.CidsiData" >
+    insert into cidsi_data (a1, a2, a3, a4, 
+      a5, a6, a7, a8, 
+      a9, a10, a11, a12, 
+      quality)
+    values (#{record.a1,jdbcType=DOUBLE}, #{record.a2,jdbcType=DOUBLE}, #{record.a3,jdbcType=DOUBLE}, #{record.a4,jdbcType=DOUBLE}, 
+      #{record.a5,jdbcType=DOUBLE}, #{record.a6,jdbcType=DOUBLE}, #{record.a7,jdbcType=DOUBLE}, #{record.a8,jdbcType=DOUBLE}, 
+      #{record.a9,jdbcType=DOUBLE}, #{record.a10,jdbcType=DOUBLE}, #{record.a11,jdbcType=DOUBLE}, #{record.a12,jdbcType=DOUBLE}, 
+      #{record.quality,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.tfx.domain.CidsiData" >
+    insert into cidsi_data
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="a1 != null" >
+        a1,
+      </if>
+      <if test="a2 != null" >
+        a2,
+      </if>
+      <if test="a3 != null" >
+        a3,
+      </if>
+      <if test="a4 != null" >
+        a4,
+      </if>
+      <if test="a5 != null" >
+        a5,
+      </if>
+      <if test="a6 != null" >
+        a6,
+      </if>
+      <if test="a7 != null" >
+        a7,
+      </if>
+      <if test="a8 != null" >
+        a8,
+      </if>
+      <if test="a9 != null" >
+        a9,
+      </if>
+      <if test="a10 != null" >
+        a10,
+      </if>
+      <if test="a11 != null" >
+        a11,
+      </if>
+      <if test="a12 != null" >
+        a12,
+      </if>
+      <if test="quality != null" >
+        quality,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="a1 != null" >
+        #{a1,jdbcType=DOUBLE},
+      </if>
+      <if test="a2 != null" >
+        #{a2,jdbcType=DOUBLE},
+      </if>
+      <if test="a3 != null" >
+        #{a3,jdbcType=DOUBLE},
+      </if>
+      <if test="a4 != null" >
+        #{a4,jdbcType=DOUBLE},
+      </if>
+      <if test="a5 != null" >
+        #{a5,jdbcType=DOUBLE},
+      </if>
+      <if test="a6 != null" >
+        #{a6,jdbcType=DOUBLE},
+      </if>
+      <if test="a7 != null" >
+        #{a7,jdbcType=DOUBLE},
+      </if>
+      <if test="a8 != null" >
+        #{a8,jdbcType=DOUBLE},
+      </if>
+      <if test="a9 != null" >
+        #{a9,jdbcType=DOUBLE},
+      </if>
+      <if test="a10 != null" >
+        #{a10,jdbcType=DOUBLE},
+      </if>
+      <if test="a11 != null" >
+        #{a11,jdbcType=DOUBLE},
+      </if>
+      <if test="a12 != null" >
+        #{a12,jdbcType=DOUBLE},
+      </if>
+      <if test="quality != null" >
+        #{quality,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+    <update id="updateByExampleSelective" parameterType="map" >
+    update cidsi_data
+    <set >
+      <if test="record.a1 != null" >
+        a1 = #{record.a1,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a2 != null" >
+        a2 = #{record.a2,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a3 != null" >
+        a3 = #{record.a3,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a4 != null" >
+        a4 = #{record.a4,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a5 != null" >
+        a5 = #{record.a5,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a6 != null" >
+        a6 = #{record.a6,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a7 != null" >
+        a7 = #{record.a7,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a8 != null" >
+        a8 = #{record.a8,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a9 != null" >
+        a9 = #{record.a9,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a10 != null" >
+        a10 = #{record.a10,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a11 != null" >
+        a11 = #{record.a11,jdbcType=DOUBLE},
+      </if>
+      <if test="record.a12 != null" >
+        a12 = #{record.a12,jdbcType=DOUBLE},
+      </if>
+      <if test="record.quality != null" >
+        quality = #{record.quality,jdbcType=VARCHAR},
+      </if>
+    </set>
+    
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update cidsi_data
+    set a1 = #{record.a1,jdbcType=DOUBLE},
+      a2 = #{record.a2,jdbcType=DOUBLE},
+      a3 = #{record.a3,jdbcType=DOUBLE},
+      a4 = #{record.a4,jdbcType=DOUBLE},
+      a5 = #{record.a5,jdbcType=DOUBLE},
+      a6 = #{record.a6,jdbcType=DOUBLE},
+      a7 = #{record.a7,jdbcType=DOUBLE},
+      a8 = #{record.a8,jdbcType=DOUBLE},
+      a9 = #{record.a9,jdbcType=DOUBLE},
+      a10 = #{record.a10,jdbcType=DOUBLE},
+      a11 = #{record.a11,jdbcType=DOUBLE},
+      a12 = #{record.a12,jdbcType=DOUBLE},
+      quality = #{record.quality,jdbcType=VARCHAR}
+    
+  </update>
+</mapper>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>可编辑表格</title>
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./css/bootstrap-theme.css">
+	
+	<style type="text/css">
+		#dataTable td,th{
+			width:52px!important;
+			cursor: pointer;
+		}
+		.glyphicon-trash{			
+			display: none;
+		}
+		#dataTable th:hover .glyphicon-trash {
+			color:#4FD8BD;
+			display: inline-block!important;
+		}
+		.glyphicon-remove:hover{
+			color:#FF2F1D;
+		}
+	</style>
+</head>
+<body>
+<h1 style="text-align:center;">中冶赛迪后台方向测试题</h1>
+<div class="operation">
+	<form action="upload"  method="post" class="form-inline"  enctype="multipart/form-data">
+		<div class="form-group">
+	    <label for="exampleInputFile">File input</label>
+	    <input type="file" id="exampleInputFile" name="fileName">	    
+	  </div>
+	  <div class="form-group">
+	  <input type="submit" value="提交">
+	  </div>
+	</form> 
+
+</div>
+<br>
+<a href="download">下载数据文件 </a>
+<div class="container">
+	<table class="table table-bordered" id="dataTable">
+		<thead>
+			<tr>
+				<th>a1 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a2 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a3 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a4 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a5 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a6 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a7 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a8 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a9 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a10 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a11 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>a12 <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>quality <span class="glyphicon glyphicon-trash" arial-hidden="true" ></span></th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+	</table>
+	<nav aria-label="...">
+	  <ul class="pager">
+	  	<li><span id="totalPage"></span></li>
+	  	<li><span id="nowPageNo"></span></li>
+	    <li><a href="#" id="previous">上一页</a></li>
+	    <li><a href="#" id="next">下一页</a></li>
+	    <li><span><a href="#" id="goto">跳转到</a>&nbsp;<input id="pageNo" type="text" style="width:25px; border-width:2px;border-radius:5px;"></span></li>
+	  </ul>
+	</nav>
+</div>
+
+</body>
+<script type="text/javascript" src="./js/jquery-2.2.3.min.js"></script>
+<script type="text/javascript" src="./js/bootstrap.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+</html>
