@@ -1,0 +1,11 @@
+1.git add directory(or filename)
+2.$ git remote add origin git@github.com:NO952712138/your_repository.git
+2.git commit -m "commit statements"
+3.git push -u origin master(If this is your first time commit,this step is necessary)
+==============================================
+error i met:
+failed to push some refs to 'git@github.com:NO952712138/EditTable.git' hint: Updates were rejected because the tip of your current branch is behind hint: its remote counterpart. Integrate the remote changes (e.g. hint: 'git pull ...') before pushing again
+solution:
+This error was occured because we did not pull the file readme.md. So, 
+we use "$ git pull origin master" to pull the origin repository
+and then use "$ git push origin master"
